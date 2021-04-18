@@ -9,24 +9,29 @@ Imprima o nome do animal correspondente à entrada fornecida.
 """
 # Definindo os conjuntos
 
-# Odens
-onivoro = ('minhoca', 'homem', 'pomba')
-carnivoro = ('aguia',)
-herbivoro = ('vaca', 'lagarta')
-hematofago = ('sanguessuga', 'pulga')
-
-#geral
-subfilo = {
-'vertebrado':{
-    'ave':{carnivoro, onivoro},
-    'mamifero':{onivoro, herbivoro}
+geral = {
+    'vertebrado':{
+    'ave':{
+        'carnivoro': 'aguia',
+        'onivoro': 'pomba'
+     },
+    'mamifero':{
+        'onivoro': 'homem',
+        'herbivoro': 'vaca'}
     },
-'invertebrado':{
-    'inseto':{hematofago, herbivoro},
-    'anelideo':{hematofago, onivoro}}
+    'invertebrado':{
+        'inseto':{
+            'hematofago':'pulga',
+            'herbivoro':'lagarta'
+            },
+        'anelideo':{
+            'hematofago':'sanguessuga',
+            'onivoro':'minhoca'
+        }
+    }
 }
-#input do usuário
-subfilo = input()
-classe = input()
-odrem = input()
-print(subfilo[subfilo][classe][ordem])
+
+subfilo = str(input())
+classe = str(input())
+ordem = str(input())
+print(geral[subfilo][classe][ordem])
