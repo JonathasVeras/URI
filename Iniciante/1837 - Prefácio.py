@@ -1,4 +1,4 @@
-def quociente(a, b, direcao=1):
+def divisao_euclidiana(a, b, direcao=1):
     ############################### 'a' e 'b' positivos  ###############################
     if direcao == 1:
         quociente_int = 1
@@ -51,4 +51,4 @@ def quociente(a, b, direcao=1):
 
 a, b = map(int, input().split())
 
-quociente(a, b, direcao=4)
+divisao_euclidiana(a, b, direcao=4)
