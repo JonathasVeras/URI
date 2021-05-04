@@ -1,5 +1,4 @@
 def imposto(salario_cliente):
-    imposto_renda = salario_cliente
     if salario_cliente <= 2000:
         return 0
     elif salario_cliente > 4500:
@@ -13,9 +12,13 @@ def imposto(salario_cliente):
         return imposto_renda + imposto(salario_cliente - (salario_cliente - 2000))
 
 
-salario = float(input())
+salario = float(input('Coloque aqui o salário: '))
+
 resultado = imposto(salario)
 if resultado == 0:
     print('Isento')
 else:
-    print(f'R$ {resultado:.2f}')
+    try:
+        print(f'R$ {resultado:.2f}')
+    except TypeError as err:
+        print(f'Erro ({err}) encontrado')

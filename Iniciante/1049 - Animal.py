@@ -10,23 +10,23 @@ Imprima o nome do animal correspondente à entrada fornecida.
 # Definindo os conjuntos
 
 geral = {
-    'vertebrado':{
-    'ave':{
-        'carnivoro': 'aguia',
-        'onivoro': 'pomba'
-     },
-    'mamifero':{
-        'onivoro': 'homem',
-        'herbivoro': 'vaca'}
+    'vertebrado': {
+        'ave': {
+            'carnivoro': 'aguia',
+            'onivoro': 'pomba'
+        },
+        'mamifero': {
+            'onivoro': 'homem',
+            'herbivoro': 'vaca'}
     },
-    'invertebrado':{
-        'inseto':{
-            'hematofago':'pulga',
-            'herbivoro':'lagarta'
-            },
-        'anelideo':{
-            'hematofago':'sanguessuga',
-            'onivoro':'minhoca'
+    'invertebrado': {
+        'inseto': {
+            'hematofago': 'pulga',
+            'herbivoro': 'lagarta'
+        },
+        'anelideo': {
+            'hematofago': 'sanguessuga',
+            'onivoro': 'minhoca'
         }
     }
 }
@@ -34,4 +34,10 @@ geral = {
 subfilo = str(input())
 classe = str(input())
 ordem = str(input())
-print(geral[subfilo][classe][ordem])
+animal = ''
+try:
+    animal = (geral[subfilo][classe][ordem])
+except KeyError as err:
+    print(f'O erro gerado foi KeyError: {err}')
+else:
+    print(animal)

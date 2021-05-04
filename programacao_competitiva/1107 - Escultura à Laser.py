@@ -1,4 +1,6 @@
 altura, comprimento = map(int, input().split())
+
+#Lista criada para colocar
 lista_resposta = []
 
 while altura != 0 and comprimento != 0:
@@ -11,5 +13,6 @@ while altura != 0 and comprimento != 0:
 
     lista_resposta.append(uso_do_laser)
     altura, comprimento = map(int, input().split())
+
 for i in lista_resposta:
     print(i)
