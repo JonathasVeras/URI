@@ -1,3 +1,4 @@
+#Incompleta
 def x(matriz, n_linhas, n_colunas):
     diagonal_coordenada = []
     lista_palavras_matriz = []
