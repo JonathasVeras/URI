@@ -16,11 +16,11 @@ tantos minuto(s)
 tantos segundo(s)
 """
 # Entrada
-primeiro_dia = input()
-hora_inicial = input()
+primeiro_dia = 'Dia 1' # str(input())
+hora_inicial = '12 : 00 : 30' # str(input())
 
-ultimo_dia = input()
-hora_final = input()
+ultimo_dia = 'Dia 1' # str(input())
+hora_final = '12 : 00 : 35' # str(input())
 
 # Tratamento
 primeiro_dia = int(primeiro_dia.split()[1])
@@ -35,13 +35,20 @@ hora_final = list(map(lambda x: int(x), hora_final.split(' : ')))
 dias = ultimo_dia - primeiro_dia - 1
 
 # Processando as horas
-duracao_dia_1 = [24 - hora_inicial[0], hora_inicial[1], hora_inicial[2]]
+duracao_dia_1 = [24 - hora_inicial[0], 60 - hora_inicial[1], 60 - hora_inicial[2]]
 # A hora final não precisa ser modificada pois ela é a hora que termina
 # Não a que começa
-duracao_geral = [duracao_dia_1[i]+hora_final[i] if i == 0 else hora_final[i]-duracao_dia_1[i] for i in range(3)]
+duracao_geral = [duracao_dia_1[i]+hora_final[i] if i == 0 else duracao_dia_1[i] + hora_final[i] for i in range(3)]
+while duracao_geral[2] >= 60:
+    duracao_geral[1] += 1
+    duracao_geral[2] -= 60
+while duracao_geral[1] >= 60:
+    duracao_geral[0] += 1
+    duracao_geral[1] -= 60
 while duracao_geral[0] >= 24:
     dias += 1
     duracao_geral[0] -= 24
+
 print(f'{dias} dia(s)')
 print(f'{duracao_geral[0]} hora(s)')
 print(f'{duracao_geral[1]} minuto(s)')
