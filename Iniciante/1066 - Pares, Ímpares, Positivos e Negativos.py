@@ -12,14 +12,21 @@ valores = []
 #Sistema para a entrada de 5 elementos na lista "valores".
 for i in range(5):
     valores.append(int(input()))
+#Dicionário onde ficam os contadores de números pares, ímpares, positivos e negativos
 contadores = {"pares": 0, "impares": 0, "positivos": 0, "negativos": 0}
+#For para avaliar cada número da lista "valores" e adicionarem pontos nos 
+#contadores dependendo do resultado
 for i in valores:
     if i % 2 == 0:
         contadores["pares"] += 1
     else:
         contadores["impares"] += 1
-    if i >= 0:
+    if i > 0:
         contadores["positivos"] += 1
-    else:
+    elif i < 0:
         contadores["negativos"] += 1
-print(contadores)
+#Saída dos dados
+print(f'{contadores["pares"]} valor(es) par(es)')
+print(f'{contadores["impares"]} valor(es) impar(es)')
+print(f'{contadores["positivos"]} valor(es) positivo(s)')
+print(f'{contadores["negativos"]} valor(es) negativo(s)')
