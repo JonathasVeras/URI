@@ -15,4 +15,10 @@ for i in valores:
         print("NULL")
     else:
         if i % 2 == 0:
-            print("")
+            print("EVEN", end=" ")
+        else:
+            print("ODD", end=" ")
+        if i > 0:
+            print("POSITIVE")
+        else:
+            print("NEGATIVE")
